@@ -1,3 +1,4 @@
+const keep_alive = require(`./keep_alive.js`);
 const mineflayer = require('mineflayer');
 const Movements = require('mineflayer-pathfinder').Movements;
 const pathfinder = require('mineflayer-pathfinder').pathfinder;
