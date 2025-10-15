@@ -1,45 +1,105 @@
-# Afk Bot
-<p align="center"> 
-    <img src="https://img.shields.io/github/issues/urfate/afk-bot">
-    <img src="https://img.shields.io/github/forks/urfate/afk-bot">
-    <img src="https://img.shields.io/github/stars/urfate/afk-bot">
-    <img src="https://img.shields.io/github/license/urfate/afk-bot">
-</p>
+<!-- Last updated: 2025-08-21T17:25:27Z -->
+# 🤖 Minecraft AFK Bot (Mineflayer-Based)
 
-<p align="center">
-    Functional minecraft AFK bot for servers
-</p>
+This is a lightweight Minecraft Java AFK Bot powered by [Mineflayer](https://github.com/PrismarineJS/mineflayer). It connects to a Java server, performs basic movements to avoid AFK detection, and can be customized via a simple configuration file.
 
-<p align="center">
-    Anti-AFK, Auto-Auth, Microsoft/Offline accounts support.
-</p>
+---
 
-## Tutorial
+## ⚠️ Warning Before You Begin
 
-1. Please Watch This Quick 3 Minute Video [HERE](https://www.youtube.com/watch?v=92khf57AfpE) And Consider Subscribing.
-2. For Any Questions Please Join My Discord Server And Create a Ticket. [HERE](https://discord.gg/MgfBNqxSA9)
-3. Fork The Code by pressing on the top Right.
-4. Like the Code So I can Keep Updating it!
+- Before starting the bot, please make sure that the Offline Mode (Pirated/Not Original) option in the settings section of your Aternos server is active.
 
-## Installation
+- Secure the bot to protect it from monsters in the game.
 
- 1. [Download](https://github.com/urFate/Afk-Bot/tags) the latest package.
- 2. Download & install [Node.JS](https://nodejs.org/en/download/)
- 3. Run `npm install` command in bot directory.
- 
- ## Usage
- 
- 1. Configure bot in `settings.json` file. [Bot configuration is explained in our wiki](https://urfate.gitbook.io/afk-bot/bot-configuration)
- 2. Start bot with `node .` command.
+---
 
-## Features
+## ✨ Features
 
- - Anti-AFK Kick Module
- - Move to target block after join
- - Mojang/Microsoft Account support
- - Chat log
- - Chat messages Module
- - Auto reconnect
- - Authentication with Login Security [HERE](https://aternos.org/addons/a/spigot/19362) (Authentication Plugin For Cracked Servers)
- - Supported server versions: `1.8 - 1.21.3`
+* Connect to Minecraft Java servers (IP + port)
+* Customize bot username
+* Control chunk loading and memory usage
+* Periodic chunk pruning to reduce resource usage
+* Auto-movement behavior: step forward/backward, jump, sneak, loop
+* Easy configuration via `config.json`
 
+---
+
+## ⚡ Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/icelaterdc/Minecraft-AFK-Bot.git
+cd Minecraft-AFK-Bot
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure `config.json`
+
+```json
+{
+  "serverHost": "yourserver.aternos.me",
+  "serverPort": 25565,
+  "botUsername": "MyBotName",
+  "botChunk": 4
+}
+```
+
+> ⚠️ Make sure the server is in offline mode if you're not using premium accounts.
+
+---
+
+## 🤖 Starting the Bot
+
+```bash
+node bot.js
+```
+
+On successful connection:
+
+* You'll see `✅ BotName is Ready!` in the console
+* After 5 seconds, all loaded chunks are cleared
+* Every 20 seconds, any chunks beyond a 6-chunk radius will be removed
+
+---
+
+## ⚙️ Configuration Options (`config.json`)
+
+| Key            | Description                                |
+| -------------- | ------------------------------------------ |
+| `serverHost`         | IP or domain of your Minecraft server      |
+| `serverPort`         | Server port (default is 25565)             |
+| `botUsername`     | The bot's visible name in-game             |
+| `botChunk` | Radius of loaded chunks (recommended: 1–6) |
+
+---
+
+## ⚠️ Notes
+
+* **Skins**: Skins might not appear properly if the server is in offline mode.
+* **Sneak Movement**: The bot uses `setControlState('sneak', true)`, but some servers may block or ignore this action.
+* **AFK Prevention**: The bot periodically moves, sneaks, and jumps to prevent disconnection due to inactivity.
+
+---
+
+## 📚 Resources & Contributions
+
+* [Mineflayer Docs](https://mineflayer.prismarine.js.org/)
+* [PrismarineJS GitHub](https://github.com/PrismarineJS/)
+
+Feel free to contribute by opening a pull request or submitting an issue.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+Get started now and keep your server active with a smart, customizable bot! ⛏️
