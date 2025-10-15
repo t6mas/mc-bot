@@ -1,3 +1,4 @@
+const keep_alive = require(`./keep_alive.js`);
 const mineflayer = require('mineflayer');
 const config = require('./config.json');
 
